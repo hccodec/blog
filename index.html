@@ -64,25 +64,61 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-教务网课程评价填写脚本.4" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-HTML实现水平垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2022/03/04/%E6%95%99%E5%8A%A1%E7%BD%91%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E5%A1%AB%E5%86%99%E8%84%9A%E6%9C%AC.4/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.340Z" itemprop="datePublished">2022-03-04</time>
+    <a href="/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">HTML实现水平垂直居中</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>源码来自互联网，但略作修改。仅作学习和技术交流用，侵删</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Evaluater</span> = <span class="keyword">class</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">params</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">mainWindow</span> = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#WindowMain3&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">WindowFrame</span> = <span class="variable language_">this</span>.<span class="property">mainWindow</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#WindowFrame3&#x27;</span>).<span class="property">contentDocument</span>.<span class="property">childNodes</span>[<span class="number">1</span>];</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">ansDiv</span> = <span class="variable language_">this</span>.<span class="property">WindowFrame</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.answerDiv&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">submitBtn</span> = <span class="variable language_">this</span>.<span class="property">WindowFrame</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#r_content&gt;.b_content&gt;.tb_cont&gt;.frame-table&gt;tbody&gt;tr:nth-child(2) input:nth-child(1)&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">select</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">stuff</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">submit</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">select</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="variable language_">this</span>.<span class="property">ansDiv</span>.<span class="property">length</span> - <span class="number">2</span>; i++) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">ansDiv</span>[i].<span class="property">childNodes</span>[<span class="number">1</span>].<span class="property">childNodes</span>[<span class="number">3</span>].<span class="title function_">click</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">stuff</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text1</span> = <span class="variable language_">this</span>.<span class="property">WindowFrame</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#answerDiv16 textarea&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text2</span> = <span class="variable language_">this</span>.<span class="property">WindowFrame</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#answerDiv17 textarea&#x27;</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text1</span>.<span class="property">innerText</span> = <span class="string">&#x27;都很满意&#x27;</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text2</span>.<span class="property">innerText</span> = <span class="string">&#x27;暂时没有&#x27;</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text1</span>.<span class="property">value</span> = <span class="variable language_">this</span>.<span class="property">text1</span>.<span class="property">innerText</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">text2</span>.<span class="property">value</span> = <span class="variable language_">this</span>.<span class="property">text2</span>.<span class="property">innerText</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">submit</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> tick = <span class="number">6</span>;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`由于必须填写一分钟以上，<span class="subst">$&#123;tick&#125;</span> 秒后将自动提交，请耐心等待~`</span>);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">infoInterval</span> = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            tick--;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`由于必须填写一分钟以上，<span class="subst">$&#123;tick&#125;</span> 秒后将自动提交，请耐心等待~`</span>);</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">clearInterval</span>(<span class="variable language_">this</span>.<span class="property">infoInterval</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">submitBtn</span>.<span class="title function_">click</span>();</span><br><span class="line">        &#125;, tick*<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myEvaluater = <span class="keyword">new</span> <span class="title class_">Evaluater</span>();</span><br></pre></td></tr></table></figure>
+        <p>##CSS/CSS3 实现 居中（水平&amp;垂直）</p>
+<ol>
+<li><p>水平居中：行内元素<br> 把行内元素放在一个属性块（display：block）元素中，然后设置父层元素属性居中：</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>水平居中：块状元素<br> 设置外边距</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>水平居中：多个块状元素<br> 把块状元素属性（display：inline-block），然后设置父层元素属性居中：</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>水平居中：多个块状元素（flexbox布局实现）<br> 把块状元素的父元素属性 display:flex和justify-content:center，如下设置：</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="selector-class">.test</span> &#123;</span><br><span class="line">        <span class="attribute">text-align</span>:center;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="number">5</span>. 垂直居中：单行的行内元素</span><br><span class="line">    设置<span class="attribute">height</span>和<span class="attribute">line-height</span>属性</span><br><span class="line">    ```css</span><br><span class="line">    <span class="selector-class">.test</span> &#123;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">line-height</span>:<span class="number">100px</span>; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>垂直居中：多行的行内元素<br> 给要居中的父元素设置display:table-cell和vertical-align:middle属性</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="comment">/* 以下属性垂直居中 */</span></span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>垂直居中：已知高度的块状元素<br> 给要居中的元素设置如下属性</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">50px</span>;  <span class="comment">/* margin-top值为自身高度的一半 */</span></span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>水平垂直居中：已知高度和宽度的元素<br> 给要居中的元素设置如下属性<br> （1）</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">margin</span>:auto;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> （2）</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">75px</span>;  <span class="comment">/* 设置margin-left / margin-top 为自身高度的一半 */</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">75px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>水平垂直居中：未知高度和宽度元素<br> 给要居中的元素设置如下属性</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);  <span class="comment">/* 使用css3的transform来实现 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>水平垂直居中：可用flex<br>设置如下属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>:center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="comment">/* 注意这里需要设置高度来查看垂直居中效果 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#AAA</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<p>参考链接:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000019666702">https://segmentfault.com/a/1190000019666702</a></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/%E6%95%99%E5%8A%A1%E7%BD%91%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E5%A1%AB%E5%86%99%E8%84%9A%E6%9C%AC.4/" data-id="cl0bsdluh0009ussfhw3e31fn" class="article-share-link">Share</a>
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" data-id="cl0bsr0qq0000rcsf0ynf1i1y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -92,15 +128,240 @@
 
 
   
-    <article id="post-WSL linux相关设置.7" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-NodeJS 从安装到卸载再到重装" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE.7/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.333Z" itemprop="datePublished">2022-03-04</time>
+    <a href="/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/">NodeJS 从安装到卸载再到重装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NodeJS-的安装与完全卸载"><a href="#NodeJS-的安装与完全卸载" class="headerlink" title="NodeJS 的安装与完全卸载"></a>NodeJS 的安装与完全卸载</h1><h2 id="一、激动人心的卸载环节"><a href="#一、激动人心的卸载环节" class="headerlink" title="一、激动人心的卸载环节"></a>一、激动人心的卸载环节</h2><ol>
+<li>从<strong>程序和功能</strong>按照常规套路卸载我们的<code>Node.js</code></li>
+<li>杀掉<code>NodeJS</code>的进程：<code>tasklist|findstr &quot;node&quot; &amp;&amp; taskkill /F /IM &quot;node.js&quot; || echo Node.js已不再运行</code></li>
+<li>寻找下列文件夹并删掉它们！<br><code>Program Files (x86)\Nodejs</code><br><code>Program Files\Nodejs</code><br><code>%appdata%\npm</code><br><code>%appdata%\npm-cache</code></li>
+<li>检查环境变量确保没有<code>Nodejs</code>或<code>npm</code>相关值存在：<br><code>echo %PATH% | findstr &quot;node&quot;</code></li>
+<li>（可选）命令行输入<code>where node</code>检查，凡是显示出的全都可以删掉！！</li>
+<li>为了保险，重启！！（我没重启。。。）</li>
+</ol>
+<h2 id="二、安装-重装"><a href="#二、安装-重装" class="headerlink" title="二、安装/重装"></a>二、安装/重装</h2><ol>
+<li><p>下载安装包（建议通过正规渠道——<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">nodejs官网(中文)</a>下载）并运行安装。安装时注意以下几点：</p>
+<ul>
+<li>默认安装在<code>C:\Program Files\nodejs</code>路径下，可更改，记得确认好安装位置</li>
+<li>若不在Custum Setup中选择Add to PATH，则稍后将手动设置其环境变量</li>
+<li>其他选项默认即可</li>
+</ul>
+</li>
+<li><p>命令行输入<code>node -v</code>和<code>npm -v</code>检查安装，出现版本号代表安装成功</p>
+</li>
+<li><p>换源<br>使用npm的默认镜像源进行包的安装时存在不便，可能拖慢工程进度，可通过换源解决这一问题。</p>
+<ul>
+<li><p>三种方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//(原理)更改或追加npm配置文件：`%USERPROFILE%\.npmrc`</span><br><span class="line">registry = https://registry.npm.taobao.org</span><br><span class="line">//通过config命令</span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">//命令行指定</span><br><span class="line">npm --registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
+<li><p>之后可运行命令<code>type %USERPROFILE%\.npmrc</code>检查文件内容</p>
+</li>
+</ul>
+</li>
+<li><p>修改全局依赖包下载路径</p>
+<p>全局依赖包下载路径指的是包在执行<code>npm i- g XXXX</code>全局下载时的安装路径。</p>
+<ul>
+<li>可先在命令行输入<code>npm root -g</code>查看该路径</li>
+<li>以下两种方法可对其进行更改<ol>
+<li>运行cmd命令(原理与2相同)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set perfix XXX  （替换npm root -g的输出值）</span><br><span class="line">npm config set cache XXXX   （替换执行包的全局安装时同时生成的同级缓存目录）</span><br></pre></td></tr></table></figure></li>
+<li>更改或追加npm配置文件：<code>%USERPROFILE%\.npmrc</code>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">prefix = XXX</span><br><span class="line">cache = XXXX</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">本次：</span><br><span class="line">XXX=D:\ProgramData\node_global_directory\node_global</span><br><span class="line">XXXX=D:\ProgramData\node_global_directory\node_cache</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>之后可运行命令<code>type %USERPROFILE%\.npmrc</code>检查文件内容</li>
+<li><strong>修改过环境变量后，一定要重启cmd窗口以看到环境变量修改后的效果</strong></li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>参考地址：</p>
+<ol>
+<li>完全卸载nodejs：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fighxp/p/7410235.html">https://www.cnblogs.com/fighxp/p/7410235.html</a></li>
+<li>菜鸟教程-安装nodejs：<a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-install-setup.html">https://www.runoob.com/nodejs/nodejs-install-setup.html</a></li>
+<li>Nodejs安装及环境配置：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/13f45e24b1de">https://www.jianshu.com/p/13f45e24b1de</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/" data-id="cl0bsr0qt0001rcsf6fgn95xs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-React-Native 定义事件基类 EventBus" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/">React-Native 定义事件基类 EventBus</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="定义事件基类"><a href="#定义事件基类" class="headerlink" title="定义事件基类"></a>定义事件基类</h1><h1 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h1><ol>
+<li><p>定义事件基类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaseEvent</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>定义具体事件类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FavorEvent</span> <span class="keyword">extends</span> <span class="title class_">BaseEvent</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> did;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FavorEvent</span><span class="params">()</span> &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FavorEvent</span><span class="params">(<span class="type">int</span> did)</span> &#123; <span class="built_in">this</span>.did = did; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getDid</span><span class="params">()</span> &#123; <span class="keyword">return</span> did; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDid</span><span class="params">(<span class="type">int</span> did)</span> &#123; <span class="built_in">this</span>.did = did; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在需要监听此事件的地方向 EventBus 注册事件监听器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EventBus.getDefault().register(<span class="built_in">this</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>当需要取消注册事件监听器时</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EventBus.getDefault().unregister(<span class="built_in">this</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/" data-id="cl0bsr0qv0002rcsf3t9t0d8q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Office 激活密钥" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/">Office 激活密钥</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>资源来自网络<br>二、Microsoft Office 2019 Vol版Gvlk密钥(KMS激活专用)<br>Office Professional Plus 2019：NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP<br>Office Standard 2019：6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK<br>Project Professional 2019：B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B<br>Project Standard 2019：C4F7P-NCP8C-6CQPT-MQHV9-JXD2M<br>Visio Professional 2019：9BGNQ-K37YR-RQHF2-38RQ3-7VCBB<br>Visio Standard 2019：7TQNQ-K3YQQ-3PFH7-CCPPM-X4VQ2<br>Access 2019：9N9PT-27V4Y-VJ2PD-YXFMF-YTFQT<br>Excel 2019：TMJWT-YYNMB-3BKTF-644 FC-RVXBD<br>Outlook 2019：7HD7K-N4PVK-BHBCQ-YWQRW-XW4VK<br>PowerPoint 2019：RRNCX-C64HY-W2MM7-MCH9G-TJHMQ<br>Publisher 2019：G2KWX-3NW6P-PY93R-JXK2T-C9Y9V<br>Skype for Business 2019：NCJ33-JHBBY-HTK98-MYCV8-HMKHJ<br>Word 2019：PBX3G-NWMT6-Q7XBW-PYJGG-WXD33</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/" data-id="cl0bsr0qw0003rcsf2jpk0m8w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-conda及pip配置文件 - 已整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/">conda及pip配置文件 - 已整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="conda-清华源"><a href="#conda-清华源" class="headerlink" title="conda 清华源"></a>conda 清华源</h2><p>路径：<br>-（Windows）<code>%USERPROFILE%/.condarc</code><br>-（Linux）<code>~/.condarc</code></p>
+<p>检查命令：<code>conda config --show-sources</code>（事实上，<code>show--sources</code>只需输入到<code>show-</code>即可达到效果）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">ssl_verify: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="conda-北外镜像"><a href="#conda-北外镜像" class="headerlink" title="conda 北外镜像"></a>conda 北外镜像</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/</span><br><span class="line">#Conda Forge</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">#msys2（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">#bioconda（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">#menpo（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">#pytorch</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"># for legacy win-64（可略）</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/cloud/peterjc123/</span><br><span class="line">ssl_verify: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="pip-阿里源"><a href="#pip-阿里源" class="headerlink" title="pip 阿里源"></a>pip 阿里源</h2><p>路径：<br>-（Windows）<code>%USERPROFILE%/pip/pip.ini</code><br>-（Linux）<code>~/.pip/pip.conf</code></p>
+<p>检查命令：<code>pip config list</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">timeout = 6000</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">trusted-host = mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>参考地址</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/" data-id="cl0bsr0qw0004rcsf2841ffux" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-WSL linux相关设置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">WSL linux相关设置</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -109,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE.7/" data-id="cl0bsdlt20003ussfdc118im8" class="article-share-link">Share</a>
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" data-id="cl0bsr0r00005rcsf68o103v3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,30 +380,41 @@
 
 
   
-    <article id="post-wincmdTips.15" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-html 小技巧" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2022/03/04/wincmdTips.15/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.313Z" itemprop="datePublished">2022-03-04</time>
+    <a href="/blog/2022/03/04/html%20%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/html%20%E5%B0%8F%E6%8A%80%E5%B7%A7/">html 小技巧</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Windows-命令行相关小贴士"><a href="#Windows-命令行相关小贴士" class="headerlink" title="Windows 命令行相关小贴士"></a>Windows 命令行相关小贴士</h1><h2 id="控制台字符的打印输出"><a href="#控制台字符的打印输出" class="headerlink" title="控制台字符的打印输出"></a>控制台字符的<strong>打印输出</strong></h2><p><code>echo str</code></p>
-<h2 id="powershell处理字符串"><a href="#powershell处理字符串" class="headerlink" title="powershell处理字符串"></a>powershell处理字符串</h2><ol>
-<li>分割字符串：<code>$(nvm root).split(&quot;&quot;)[3]</code></li>
-<li>连接字符串：<code>$s1+$s2</code>或<code>-Join($s1, $s2)</code>或<code>$s1*3</code><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a><strong>环境变量</strong></h2></li>
-<li>表示：<br> 在 cmd 中：<code>%path%</code>；在 powershell 中：<code>$env:path</code></li>
-<li>输出：<br> 在 cmd 中：<code>echo %path%</code>；<br> 在 powershell 中：直接输入<code>$env:path</code>或<code>echo $env:path</code></li>
+        <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="页脚在最底部"><a href="#页脚在最底部" class="headerlink" title="页脚在最底部"></a>页脚在最底部</h2><ol>
+<li>采用 flexbox 布局模型<ul>
+<li>将 body 的 display 属性设置为 flex，然后将方向属性设置为列（纵向布局）；</li>
+<li>同时将 html 和 body 元素的高度设置为 100% 以使之充满整个屏幕<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span>MAIN<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//css 代码</span><br><span class="line">* &#123; <span class="attribute">margin</span>: <span class="number">0</span>; <span class="attribute">padding</span>: <span class="number">0</span> &#125;</span><br><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span> &#125;</span><br><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span> &#123; <span class="attribute">background</span>: <span class="number">#999</span>; <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> auto &#125;</span><br><span class="line"><span class="selector-class">.main</span> &#123; <span class="attribute">background</span>: orange; <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">0</span> auto; &#125;</span><br><span class="line"><span class="selector-tag">footer</span> &#123; <span class="attribute">background</span>: <span class="number">#333</span>; <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> auto &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/wincmdTips.15/" data-id="cl0bsdlta0007ussf87v86wa0" class="article-share-link">Share</a>
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/html%20%E5%B0%8F%E6%8A%80%E5%B7%A7/" data-id="cl0bsr0r10006rcsfa3nm7h07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,15 +424,79 @@
 
 
   
-    <article id="post-vue的使用.13" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nodejsTips" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8.13/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.306Z" itemprop="datePublished">2022-03-04</time>
+    <a href="/blog/2022/03/04/nodejsTips/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/nodejsTips/">NodeJS 的一些小贴士</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="以下是一些小贴士"><a href="#以下是一些小贴士" class="headerlink" title="以下是一些小贴士"></a>以下是一些小贴士</h1><h2 id="1-npm-换源："><a href="#1-npm-换源：" class="headerlink" title="1. npm 换源："></a>1. npm 换源：</h2><pre><code>淘宝源就是阿里源，阿里源就是淘宝源
+</code></pre>
+<h2 id="2-npm中，包的管理"><a href="#2-npm中，包的管理" class="headerlink" title="2. npm中，包的管理"></a>2. npm中，包的管理</h2><pre><code>查看所有全局安装的包：`npm list -g --depth 0`
+
+查看全局是否安装过某个包：`npm ls 包/插件名称 -g`
+查看当前文件下是否安装某个包：`npm ls 包/插件名称`
+
+查看一个包的版本信息（以`jQuery`包为例）：
+npm服务器上所有的jquery版本信息：`npm view jquery versions`
+只查看jquery的最新的版本：`npm view jquery version`
+更全的信息：`npm info jquery`
+</code></pre>
+<hr>
+<p>参考链接：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/taylorzun/article/details/105238710">npm查看全局安装过哪些包，是否安装过某个包</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/cvper/article/details/79543262?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&dist_request_id=09497030-1718-400c-b6e6-a7f7d2d85fc9&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">npm 如何查看一个包的版本信息？</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/nodejsTips/" data-id="cl0bsr0r20007rcsf9hhu1ng6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8/">vue 的使用</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -169,7 +505,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8.13/" data-id="cl0bsdlug0008ussfab0h8d0j" class="article-share-link">Share</a>
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="cl0bsr0r30008rcsf6kxx3271" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,85 +515,25 @@
 
 
   
-    <article id="post-useless personal diaries.5" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-react-native 组件间通信简述" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2022/03/04/useless%20personal%20diaries.5/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.300Z" itemprop="datePublished">2022-03-04</time>
+    <a href="/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0/" class="article-date">
+  <time datetime="2022-03-04T02:20:34.000Z" itemprop="datePublished">2022-03-04</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>4月7日日报<br>今天作为第一天练课，我尝试在线上讲解一道物理题目。这道题本身并不复杂，但此题的解题思路很巧妙、题目的重难点也有值得拓展的价值，是一道值得讲解、也能看出教师功底的一道好题。考虑到线上培训的进行比线下难度更大、不好把控，大家都投注了很集中的精力，气氛有些紧张。<br>一、    今日练课反思及周围人有什么值得自己学习的地方<br>    上午我虽然作为第二个开讲但自己的心态却很紧张。我高中每天都能听到物理老师的讲课，耳濡目染，我也经常进行模仿学习，也更深刻体会到作为教师的责任感和辛苦的程度；今天臧老师给了我同样的感觉，有太多值得我学习和消化的地方。有过帮高中物理老师上习题课的经历，我意识到教学一定以学生为出发点、围绕学生的认知特点水平进行内容的设计安排，我在准备的过程中始终遵循这一点。在语言和节奏上也在和台下想象中的同学们进行同步，也得到了臧老师对声音的肯定。但同时我也意识到，在四年的大学生活中，自己对他人进行讲解的能力和水平与高中时相比发生了一定退步，亟需练习和指导。<br>上午需要检讨的是：<br>第一点，    上午自己的准备并不充分，由于自己的疏忽，之前其实自己准备了其他的一道动能定理的题，而开始前十分钟才找到题库中的题并开始准备。<br>第二点，    我今天没能借到空教室，在寝室采用线上模拟直播的形式，没能展现出台风和姿态，也没能进入状态。好在臧老师耐心地为我进行了高标准而有针对性的指导，使我获益匪浅。我上午的表现虽然在节奏上有一定程度的把控，但逻辑比较混乱、需要缕清。<br>第三点，    虽然我有意识与学生进行交流但还是没能更充分地与学生进行互动交流。<br>下午，我先观看了其他两位同学的表现，发现他们在臧老师指导下有很大进步，台风也更稳。而我在准备时仍为无法展现台风感到遗憾，不过也努力根据臧老师上午的指导进行了改善，丰富了逻辑，也设计了板书。然而在表现过程中，某些细节并未得到充分体现，有的板书甚至忘记了写在上面，同时发挥也不尽人意，觉得有一点愧对臧老师……而臧老师仍然耐心地为我进行了直击痛点的有价值的指导：</p>
-<ol>
-<li>   一个是上述提到的板书问题，包括应该在提微元法的时候更直观地在图中进行相应的标记；</li>
-<li>   另一个是对于这道题来讲，讲解的重点应该放在第二问，即本题重难点所在，而我由于在准备过程中被大学的辅导员临时安排了紧急事情而失去了一些准备时间，我对第二问的准备也并不充分，结果是将大部分时间安排给了第一问。</li>
-<li>   第三个问题是，臧老师和我分享说我们存在一个问题就是在讲题时会说较为空洞的话作为总结性语言等，这在我下午的表现上有很大体现，我思考了一下，发现某些总结性的话语在一些时候确实不是直接对学生说的，而是在自己的教学过程中润物细无声地渗透的。这需要巧妙地在教学设计中进行落实，希望在今后的提高中能着重设计这方面内容。</li>
-<li>超时了……臧老师没打断而是事后告诉我用了6到8分钟，这使我对时长把控给予了更高的关注度。高中时我听北师大教授讲座，见识到她把时长完美把控到90分钟整，那一刻就对时长把控深有感触，虽然我想到了这一点，但此前尚未在准备过程中掐好时间，也没能知道如何删减精炼。这是一个待解决的缺点。<br> 看到了其他两个同学的表现，我发现了很多要点和值得学习的地方：上午，杨同学的准备很充分、在讲题完成后也有拓展，整个过程很充实；可是，讲题思路较跳跃、对学生的认知水平和能力欠缺考虑，并且缺乏与学生的眼神等互动，不利于学生对知识进行吸收内化。而富同学颇有教授风范，但对于需要教师起到更多引导作用的高中生来说，这种教法并不推荐。对于这两个同学的问题，臧老师也非常犀利地指出，并做出了很全面的点评和专业的指导，臧老师的水平既让我憧憬，又让我感到些许的压力，但这种压力无疑有助于我态度的端正和水平的提高。下午，两位同学针对臧老师的建议进行了优化。可以感受到杨同学在讲课节奏方面进行了更细微的把控，思路也更加清晰；富同学也有所改进，尽力给予学生更多的引导和指导，但某些内容则讲的过于细致。<br>本来在我看来，两位同学已经得到了一定程度的提高，但臧老师及时点醒了我，使我意识到这还不够。我想到了自己的高中物理教师以及臧老师，觉得自己的提升空间尚还很大。今天臧老师的指导更使我受益匪浅。<br>二、    明日练课方向<br>今天没能展现台风很遗憾，明天最重要的一点就是找到一个可以写板书的地方，目的是注意展现讲课的姿态，并同时大胆地将其暴露给臧老师。<br>今天我在讲课的过程中很难体会自己给他人的感受是什么样子的，明天重要的一点就是加强自我审视，这样也能更有效地接受臧老师的指导，从而能更快地根据指导做出相应的教学改进。<br>明天需要改正的地方：1. 着重讲解第二问；2. 板书配合要默契；3. 语言更易于接受；4. 结构设计更严谨；5. 时长把控更精确。<br>我渴望臧老师的指导以提高自己，使自己能配得上学而思的要求，真正做到有效对学生进行高质量教学，最终也能为学而思培养出更多优秀的学子。<br>三、    需要得到的帮助<br>在大学四年的生活，既看不到高中老师那干练的讲课身影、耳濡目染；又没有太多自己跟身边人或在小组用白板和组员进行分享和讲解的经历。疫情这一年多过去，我深刻意识到自己的讲课水平大不如前。但同时，随着今天的学习，那种感觉又呼之欲出。我相信自己多多努力，在臧老师的指导下，能够有效提高水平。<br>不得不承认的一点是，即使我很努力地在用心去听、用心去记，甚至做备忘录，但有时也会因为事情繁多而忘记事情；但当事情重要到极点的时候，我又从未忘记过。我有时会怀疑自己是否真正认真对待事情，但我很明白，自己对待这些事情的态度确实很端正。这个矛盾有时使我百思不得其解。<br>四、    关于培训的建议<br>臧老师作为培训师，非常负责。老师的评语非常到位、直击痛点。也能看出老师的态度非常认真，不容置疑地坚决杜绝缺点和错误的坚定态度。同时，臧老师的示范也非常深入人心，是我努力的方向。最近我在学校的事务以及毕业设计任务稍微有点繁重，但我觉得目前的节奏是可以的！培训师和老师们都辛苦了。</li>
-</ol>
-<p>===================================================================================</p>
-<p>4月8日日报<br>一、    今日练课反思及周围人有什么值得自己学习的地方<br>今天是练课的第二天，有了不一样的感觉——我感觉到了更强的专业性和更高的要求。今天有幸用到了教学楼的教室，就在这间教室练习了一整天，甚至有些练习过度，这是因为后面产生了一些不利于我优化自身的一种麻木感。不过在真正的教室进行练习确实有助于端正态度，我收获到了昨天收获不到的一种讲课的感觉。<br>在上午讲课的过程中，臧老师主要想看到大家的熟练度，而我上午手里却是拿着稿子的，这样导致台风出现了很大的问题。此外，我在互动的过程中也出现了刻意的动作可能影响观感。然后的问题就是自己仍然没有把第二问讲清楚。当然，讲题的时长也超了5分钟。<br>在之后的练习中，我着重把注意力错误地放在了时长上，觉得要在规定的5分钟时长里成功把题讲完。这样就疏忽了第二问的逻辑梳理和讲解上的设计。当然，这些错误在下午的讲解中体现了出来并被臧老师精准指出。<br>在下午讲课的过程中，臧老师对我们的课堂互动环节提出了新指示。臧老师提出了三点意见：一是板书的设计不够合理；二是出现了之前少见的背板现象；三是仍然没有把题目的第二问讲清楚，此外，似乎我的互动也并不足够。这个时候我清晰地意识到，中午的练习使我产生了为了练习而练习的刻板的错误感觉，忽视了与学生的交流与互动。这是一个很低级的错误，当时我把注意力始终放在了题目本身上而相对忽略了对同学们的关注。<br>晚上我把第二问着重看了下并在录课视频中适当改进，但还有待提高，明天将起早继续练习，希望风采展能正常甚至超常发挥。<br>二、    明日练课方向<br>明天练课的方向就是：规范板书的字体和排版；调整讲题的台风和姿态；缕清第二问的逻辑思路，杜绝背板现象。<br>三、    需要得到的帮助<br>今天自己练的有点多，手机里没来得及删的练课视频还有44条，这44条每条都没有低于5分钟……这样看起来很多但效果可能并不好。科学的练习方式往往更加重要。<br>今天我犯了一些低级的错误，包括忽略学生、台风不稳等，这些问题的出现是我不能够掉以轻心。希望我会在明天的练习中杜绝这类错误。<br>四、    关于培训的建议<br>今天臧老师似乎比昨天更严格了一点，但我看到的是臧老师昨晚熬夜但今天依旧能拿出来的负责态度，以及带来的令我受益匪浅的满满的干货。</p>
-<p>===================================================================================<br>好 同学们 我们来看一下这道题<br>遇到这种大题 我们先简单过一遍题干 提炼出题中有用的信息 翻译成比如 图形、公式 这些能帮助我们思考解题的形式。</p>
-<p>那么首先 题干提到这条老鼠是沿直线运动的，也就是速度的方向只有一前一后两种情况，所以我们可以自己先像这样简单地画一条线，我们就假设这只老鼠现在是沿着这条线向右运动。然后这个速度大小和离洞口的距离成反比，就告诉了我们速度和距离之间的关系。</p>
-<p>也就是说，这个速度和距离是一个反比例关系，是可以用公式表示出来的，而紧接着他就给了我们一对满足这样一个反比例关系的已知量v1 d1。什么是反比例关系？就是随着一个量的增加另一个量是减少的，同时他们的乘积是不变的。这样我们就直接先把v1 d1的反比例关系给表示出来：v1·d1=k，这里的k是一个常数。然后呢又告诉了我们A点对应的速度v1和距离d1以及B点对应的距离d2，我们把它先标在图上。</p>
-<p>过完题干我们看下第一问，他让我们求B点对应的速度。这一问相对来说还是很简单，根据题干的这种命名习惯，我们不妨先设这个速度为v2。那根据我们之前表示出来的v和d之间的关系，就可以得到这样的式子（联立）,两个未知量两个方程一联立，我们就能解出k=v1·d1，v2=v1·d1/d2。这样第一问就解出来了。</p>
-<p>第二问他让我们A点运动到B点的时间。我们先来回忆一下之前学过的物理模型（写匀速、匀加速直线运动公式）。我们发现这道题的速度既不是不变的也不是随时间均匀变化的，我们所学过的这两个直线云顶物理模型都不符合这道题的运动情形。而且目前我们掌握的关系就只有d=k·1/v。为了更直观，我们也能想到画出（反比例函数图象）,大家能想到数形结合这里已经很优秀了。但画出来我们发现这话时候这也并不直观，因为这样画不精确，只能画出趋势，而且更重要的是，我们要求的是时间t，可是我们看不到t的影子。<br>这种时候大家注意，我们可以开动我们数学的小脑筋，我们尽量贴近我们的时间t（圈出x=vt），稍稍给他变个形(d=k·1/v)。我们这时就发现他就是我们能轻松画出的正比例函数（画出图象）。</p>
-<p>好，想到这里这道题就会变得很简单。我们看这个图，我们知道在匀速直线运动中满足x=vt，也就是我们这个图里横轴纵轴的乘积。根据微元法，那这个图象是不是也可以看成无数个匀速直线运动组成的，这个直角梯形是不是表示的就是我们的时间呢？理解到这一点我们就可以轻松把t表示出来。这样，题也解完了。</p>
-<p>我们回头看一下这个解法，首先有的同学会有这样一个疑问，为什么下面的梯形表示的是我们的时间t而上面的这个（圈出）不是呢。我们可以这样想，在一个非常微小的时间段里，它只能是以一个不变的速度运动非常小的距离，而并不会发生在同一个位置上发生了速度的变化。所以，我们只能把1/v轴分段，而不可以把d轴分段。就像Fs图象表示功、UI表示功率一样。</p>
-<p>这道题的难点就在于能否想到把1/v看成一个量来画图。但对于这种难以把握的运动过程只要我们能想到用微元法的思想进行简化，并且在求物理量的过程中能想办法把题中给的已知信息尽量贴近我们要求的未知量进行处理，我们。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/useless%20personal%20diaries.5/" data-id="cl0bsdlt60006ussfgmz46xds" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
+      <header class="article-header">
+        
   
-</article>
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0/">react-native 组件间通信简述</a>
+    </h1>
   
-    <article id="post-SQL示例-大学柜子里的东西.2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2022/03/04/SQL%E7%A4%BA%E4%BE%8B-%E5%A4%A7%E5%AD%A6%E6%9F%9C%E5%AD%90%E9%87%8C%E7%9A%84%E4%B8%9C%E8%A5%BF.2/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.293Z" itemprop="datePublished">2022-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>切勿在已有数据库进行尝试以免丢失已有数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> Navicat MySQL Data Transfer</span><br><span class="line"></span><br><span class="line"> Source Server         : root</span><br><span class="line"> Source Server Type    : MySQL</span><br><span class="line"> Source Server Version : 50733</span><br><span class="line"> Source Host           : localhost:3306</span><br><span class="line"> Source Schema         : swjtu</span><br><span class="line"></span><br><span class="line"> Target Server Type    : MySQL</span><br><span class="line"> Target Server Version : 50733</span><br><span class="line"> File Encoding         : 65001</span><br><span class="line"></span><br><span class="line"> Date: 18/04/2021 21:31:08</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">SET NAMES utf8mb4;</span><br><span class="line">SET FOREIGN_KEY_CHECKS = 0;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Table structure for 抽屉杂物</span><br><span class="line">-- ----------------------------</span><br><span class="line">DROP TABLE IF EXISTS `抽屉杂物`;</span><br><span class="line">CREATE TABLE `抽屉杂物`  (</span><br><span class="line">  `名称` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `类别` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `颜色` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `数量` int(255) NULL DEFAULT NULL,</span><br><span class="line">  `备注` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL</span><br><span class="line">) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Records of 抽屉杂物</span><br><span class="line">-- ----------------------------</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;USB转T型接口数据线&#x27;, &#x27;数码&#x27;, &#x27;4黑2白&#x27;, 6, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;飞科剃须刀充电线&#x27;, &#x27;生活&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;双头3.5mm耳机接口&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;一袋鞋套&#x27;, &#x27;生活&#x27;, &#x27;蓝&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;一袋衣挂夹子&#x27;, &#x27;生活&#x27;, &#x27;红绿蓝黄&#x27;, 24, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;50cm VGA线&#x27;, &#x27;数码&#x27;, &#x27;蓝&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;双面胶&#x27;, &#x27;生活&#x27;, &#x27;白&#x27;, 2, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;双色魔术冰凉巾&#x27;, &#x27;生活&#x27;, &#x27;紫&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;粗头电源线&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;细头电源线&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;T型接口转USB和耳机接口数据线&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;2芯3灯电源线&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;卡西欧科学计算器&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;游戏鼠标（有声）&#x27;, &#x27;数码&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;订书器&#x27;, &#x27;工作&#x27;, &#x27;黑&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;灰色超五类网线（未开封）&#x27;, &#x27;数码&#x27;, &#x27;灰&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;USB网线 - SV1081B&#x27;, &#x27;数码&#x27;, &#x27;白&#x27;, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;美加净 牙膏&#x27;, &#x27;生活&#x27;, NULL, 1, NULL);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;档案&#x27;, &#x27;工作&#x27;, &#x27;牛皮纸&#x27;, 1, &#x27;政审报告单、作为入党积极分子推荐表、入党志愿书、自传、考察登记表、学生干部证明、10I篇思想报告、2张身份证复印件&#x27;);</span><br><span class="line">INSERT INTO `抽屉杂物` VALUES (&#x27;协议&#x27;, &#x27;生活&#x27;, &#x27;多&#x27;, 1, &#x27;空调协议、网络安全责任书、假期安全责任告知书、水电卡使用说明、驾校协议&#x27;);</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Table structure for 桌子杂物</span><br><span class="line">-- ----------------------------</span><br><span class="line">DROP TABLE IF EXISTS `桌子杂物`;</span><br><span class="line">CREATE TABLE `桌子杂物`  (</span><br><span class="line">  `名称` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `类别` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `颜色` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `数量` int(255) NULL DEFAULT NULL,</span><br><span class="line">  `位置` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `注释` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL</span><br><span class="line">) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Records of 桌子杂物</span><br><span class="line">-- ----------------------------</span><br><span class="line">INSERT INTO `桌子杂物` VALUES (&#x27;移动光驱盒&#x27;, &#x27;数码&#x27;, &#x27;牛皮纸盒子&#x27;, 1, &#x27;层3右2&#x27;, &#x27;内含机体、两根线、所有光碟&#x27;);</span><br><span class="line">INSERT INTO `桌子杂物` VALUES (&#x27;移动硬盘盒&#x27;, &#x27;数码&#x27;, &#x27;银色&#x27;, 1, &#x27;层1右&#x27;, &#x27;内含二对一线、移动硬盘袋&#x27;);</span><br><span class="line">INSERT INTO `桌子杂物` VALUES (&#x27;协议&#x27;, &#x27;生活&#x27;, &#x27;多&#x27;, 1, NULL, &#x27;空调协议、网络安全责任书、假期安全责任告知书、水电卡使用说明、驾校协议&#x27;);</span><br><span class="line">INSERT INTO `桌子杂物` VALUES (&#x27;说明书&#x27;, &#x27;生活&#x27;, &#x27;多&#x27;, 1, NULL, &#x27;椅子保修卡&#x27;);</span><br><span class="line">INSERT INTO `桌子杂物` VALUES (&#x27;证书&amp;车票&#x27;, &#x27;生活&#x27;, &#x27;多&#x27;, 1, &#x27;层3右2&#x27;, &#x27;四级成绩报告单、六级成绩报告单、录取通知书、2018-2019明诚奖、2019五一建模三等奖、2019优秀团干&#x27;);</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Table structure for 行李箱中的衣物</span><br><span class="line">-- ----------------------------</span><br><span class="line">DROP TABLE IF EXISTS `行李箱中的衣物`;</span><br><span class="line">CREATE TABLE `行李箱中的衣物`  (</span><br><span class="line">  `名称` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `类别` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `颜色` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `数量` int(255) NULL DEFAULT NULL</span><br><span class="line">) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Records of 行李箱中的衣物</span><br><span class="line">-- ----------------------------</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;校服白T恤&#x27;, &#x27;上衣&#x27;, &#x27;白&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;黄褐色深色花纹图案水钻T恤&#x27;, &#x27;上衣&#x27;, &#x27;白&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;唐装盘扣深色外套&#x27;, &#x27;外套&#x27;, &#x27;深蓝,黑&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;撕裂开的绒裤&#x27;, &#x27;绒裤&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;深色厚牛仔裤&#x27;, &#x27;牛仔裤&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;红色剑图案伦敦字体帽衫&#x27;, &#x27;外套&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;腰绳薄裤子&#x27;, &#x27;裤子&#x27;, &#x27;黑&#x27;, 2);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;白袜子&#x27;, &#x27;袜子&#x27;, &#x27;白&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;白袜套&#x27;, &#x27;袜套&#x27;, &#x27;灰&#x27;, 2);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;灰色内裤&#x27;, &#x27;内裤&#x27;, &#x27;灰&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;校服灰T恤&#x27;, &#x27;上衣&#x27;, &#x27;灰&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;重点符号图案黑边白T恤&#x27;, &#x27;上衣&#x27;, &#x27;白&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;院服黑图案白T恤&#x27;, &#x27;上衣&#x27;, &#x27;白&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;黑色红白边金属钮按扣T恤&#x27;, &#x27;上衣&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;绿白格子纽扣厚衬衫&#x27;, &#x27;上衣&#x27;, &#x27;绿白&#x27;, 1);</span><br><span class="line">INSERT INTO `行李箱中的衣物` VALUES (&#x27;蓝色灯泡图案白色背景内裤&#x27;, &#x27;内裤&#x27;, &#x27;蓝白&#x27;, 1);</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Table structure for 衣物</span><br><span class="line">-- ----------------------------</span><br><span class="line">DROP TABLE IF EXISTS `衣物`;</span><br><span class="line">CREATE TABLE `衣物`  (</span><br><span class="line">  `名称` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `类别` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `颜色` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,</span><br><span class="line">  `数量` int(255) NULL DEFAULT NULL</span><br><span class="line">) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;</span><br><span class="line"></span><br><span class="line">-- ----------------------------</span><br><span class="line">-- Records of 衣物</span><br><span class="line">-- ----------------------------</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;防晒服（橙色）&#x27;, &#x27;外套&#x27;, &#x27;橙&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;防晒服（蓝色）&#x27;, &#x27;外套&#x27;, &#x27;蓝&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;牛仔小外套&#x27;, &#x27;外套&#x27;, &#x27;深蓝&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;雨衣材质黑色帽衫&#x27;, &#x27;外套&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;BBC工装风格外套&#x27;, &#x27;外套&#x27;, &#x27;墨绿&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;绿色森马拉链帽衫&#x27;, &#x27;外套&#x27;, &#x27;绿&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;黑色薄拉链帽衫（类似防晒服）&#x27;, &#x27;外套&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;红黑相间拉链厚外套&#x27;, &#x27;外套&#x27;, &#x27;红黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;黑色红白边金属钮按扣T恤&#x27;, &#x27;上衣&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;蓝白条纹飞机图案T恤&#x27;, &#x27;上衣&#x27;, &#x27;蓝白&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;黑色T恤&#x27;, &#x27;上衣&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;蓝色宽松运动T恤&#x27;, &#x27;上衣&#x27;, &#x27;蓝&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;黑白绿格子T恤（不可出汗）&#x27;, &#x27;上衣&#x27;, &#x27;黑白&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;弹性褶皱厚裤子&#x27;, &#x27;裤子&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;绒裤&#x27;, &#x27;绒裤&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;黑色棉质厚裤子&#x27;, &#x27;裤子&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;纯棉内裤（灰）&#x27;, &#x27;内裤&#x27;, &#x27;灰&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;纯棉内裤（墨绿）&#x27;, &#x27;内裤&#x27;, &#x27;墨绿&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;丝滑内裤（暖色花色）&#x27;, &#x27;内裤&#x27;, &#x27;红/黄/白/绿&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;丝滑内裤（冷色花色）&#x27;, &#x27;内裤&#x27;, &#x27;蓝/深蓝&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;灰白袜子&#x27;, &#x27;袜子&#x27;, &#x27;灰白&#x27;, 5);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;灰袜套&#x27;, &#x27;袜套&#x27;, &#x27;灰&#x27;, 4);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;灰色蓝条纹袜子&#x27;, &#x27;袜子&#x27;, &#x27;灰&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;浅灰蓝条纹袜子&#x27;, &#x27;袜子&#x27;, &#x27;浅灰&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;蓝灰袜子&#x27;, &#x27;袜子&#x27;, &#x27;蓝灰&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;黑袜套&#x27;, &#x27;袜套&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;白袜子&#x27;, &#x27;袜子&#x27;, &#x27;白&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;灰白袜子（未开封）&#x27;, &#x27;袜子&#x27;, &#x27;灰白&#x27;, 8);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;灰袜子（未开封）&#x27;, &#x27;袜子&#x27;, &#x27;灰&#x27;, 3);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;灰色外套（松紧带坏了）&#x27;, &#x27;外套&#x27;, &#x27;墨绿&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;迷彩腰带&#x27;, &#x27;配饰&#x27;, &#x27;迷彩&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;优质灰色绒裤&#x27;, &#x27;绒裤&#x27;, &#x27;灰&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;优质黑色绒裤1&#x27;, &#x27;绒裤&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (&#x27;优质黑色绒裤2&#x27;, &#x27;绒裤&#x27;, &#x27;黑&#x27;, 1);</span><br><span class="line">INSERT INTO `衣物` VALUES (NULL, NULL, NULL, NULL);</span><br><span class="line"></span><br><span class="line">SET FOREIGN_KEY_CHECKS = 1;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/SQL%E7%A4%BA%E4%BE%8B-%E5%A4%A7%E5%AD%A6%E6%9F%9C%E5%AD%90%E9%87%8C%E7%9A%84%E4%B8%9C%E8%A5%BF.2/" data-id="cl0bsdlt10002ussf4pi0acjd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-  
-    <article id="post-react-native 组件间通信简述.8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0.8/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.286Z" itemprop="datePublished">2022-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -276,104 +552,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0.8/" data-id="cl0bsdlt40005ussfcwcz3334" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-React-Native 定义事件基类  EventBus.6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20%20EventBus.6/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.278Z" itemprop="datePublished">2022-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="定义事件基类"><a href="#定义事件基类" class="headerlink" title="定义事件基类"></a>定义事件基类</h1><h1 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h1><ol>
-<li><p>定义事件基类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaseEvent</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>定义具体事件类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FavorEvent</span> <span class="keyword">extends</span> <span class="title class_">BaseEvent</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> did;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FavorEvent</span><span class="params">()</span> &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">FavorEvent</span><span class="params">(<span class="type">int</span> did)</span> &#123; <span class="built_in">this</span>.did = did; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getDid</span><span class="params">()</span> &#123; <span class="keyword">return</span> did; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDid</span><span class="params">(<span class="type">int</span> did)</span> &#123; <span class="built_in">this</span>.did = did; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>在需要监听此事件的地方向 EventBus 注册事件监听器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EventBus.getDefault().register(<span class="built_in">this</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>当需要取消注册事件监听器时</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EventBus.getDefault().unregister(<span class="built_in">this</span>);</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20%20EventBus.6/" data-id="cl0bsdlqa0000ussfhhbt8ski" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Office 激活密钥.3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5.3/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.271Z" itemprop="datePublished">2022-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>资源来自网络<br>二、Microsoft Office 2019 Vol版Gvlk密钥(KMS激活专用)<br>Office Professional Plus 2019：NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP<br>Office Standard 2019：6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK<br>Project Professional 2019：B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B<br>Project Standard 2019：C4F7P-NCP8C-6CQPT-MQHV9-JXD2M<br>Visio Professional 2019：9BGNQ-K37YR-RQHF2-38RQ3-7VCBB<br>Visio Standard 2019：7TQNQ-K3YQQ-3PFH7-CCPPM-X4VQ2<br>Access 2019：9N9PT-27V4Y-VJ2PD-YXFMF-YTFQT<br>Excel 2019：TMJWT-YYNMB-3BKTF-644 FC-RVXBD<br>Outlook 2019：7HD7K-N4PVK-BHBCQ-YWQRW-XW4VK<br>PowerPoint 2019：RRNCX-C64HY-W2MM7-MCH9G-TJHMQ<br>Publisher 2019：G2KWX-3NW6P-PY93R-JXK2T-C9Y9V<br>Skype for Business 2019：NCJ33-JHBBY-HTK98-MYCV8-HMKHJ<br>Word 2019：PBX3G-NWMT6-Q7XBW-PYJGG-WXD33</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5.3/" data-id="cl0bsdlsy0001ussf269bek7i" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-html 小技巧.12" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2022/03/04/html%20%E5%B0%8F%E6%8A%80%E5%B7%A7.12/" class="article-date">
-  <time datetime="2022-03-04T02:16:48.245Z" itemprop="datePublished">2022-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="页脚在最底部"><a href="#页脚在最底部" class="headerlink" title="页脚在最底部"></a>页脚在最底部</h2><ol>
-<li>采用 flexbox 布局模型<ul>
-<li>将 body 的 display 属性设置为 flex，然后将方向属性设置为列（纵向布局）；</li>
-<li>同时将 html 和 body 元素的高度设置为 100% 以使之充满整个屏幕<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>HEADER<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span>MAIN<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>FOOTER<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//css 代码</span><br><span class="line">* &#123; <span class="attribute">margin</span>: <span class="number">0</span>; <span class="attribute">padding</span>: <span class="number">0</span> &#125;</span><br><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span> &#123; <span class="attribute">height</span>: <span class="number">100%</span> &#125;</span><br><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">header</span> &#123; <span class="attribute">background</span>: <span class="number">#999</span>; <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> auto &#125;</span><br><span class="line"><span class="selector-class">.main</span> &#123; <span class="attribute">background</span>: orange; <span class="attribute">flex</span>: <span class="number">1</span> <span class="number">0</span> auto; &#125;</span><br><span class="line"><span class="selector-tag">footer</span> &#123; <span class="attribute">background</span>: <span class="number">#333</span>; <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> auto &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://hccodec.github.io/blog/2022/03/04/html%20%E5%B0%8F%E6%8A%80%E5%B7%A7.12/" data-id="cl0bsdlt40004ussf73hkg58v" class="article-share-link">Share</a>
+      <a data-url="https://hccodec.github.io/blog/2022/03/04/react-native%20%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%AE%80%E8%BF%B0/" data-id="cl0bsr0r40009rcsffbkxctq2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -419,23 +598,23 @@
       <ul>
         
           <li>
-            <a href="/blog/2022/03/04/%E6%95%99%E5%8A%A1%E7%BD%91%E8%AF%BE%E7%A8%8B%E8%AF%84%E4%BB%B7%E5%A1%AB%E5%86%99%E8%84%9A%E6%9C%AC.4/">(no title)</a>
+            <a href="/blog/2022/03/04/HTML%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">HTML实现水平垂直居中</a>
           </li>
         
           <li>
-            <a href="/blog/2022/03/04/WSL%20linux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE.7/">(no title)</a>
+            <a href="/blog/2022/03/04/NodeJS%20%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E5%8D%B8%E8%BD%BD%E5%86%8D%E5%88%B0%E9%87%8D%E8%A3%85/">NodeJS 从安装到卸载再到重装</a>
           </li>
         
           <li>
-            <a href="/blog/2022/03/04/wincmdTips.15/">(no title)</a>
+            <a href="/blog/2022/03/04/React-Native%20%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%B1%BB%20EventBus/">React-Native 定义事件基类 EventBus</a>
           </li>
         
           <li>
-            <a href="/blog/2022/03/04/vue%E7%9A%84%E4%BD%BF%E7%94%A8.13/">(no title)</a>
+            <a href="/blog/2022/03/04/Office%20%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/">Office 激活密钥</a>
           </li>
         
           <li>
-            <a href="/blog/2022/03/04/useless%20personal%20diaries.5/">(no title)</a>
+            <a href="/blog/2022/03/04/conda%E5%8F%8Apip%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%20-%20%E5%B7%B2%E6%95%B4%E7%90%86/">conda及pip配置文件 - 已整理</a>
           </li>
         
       </ul>
